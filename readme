@@ -1,1 +1,7 @@
 run cago build
+sqlx migrate add -r init mifartion
+
+# postgra insall# 
+ cargo install sqlx-cli --no-default-features --features postgres
+#  docker
+docker-compose up -d
