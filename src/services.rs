@@ -10,15 +10,10 @@ async fn health_checker() -> impl Responder {
     HttpResponse::Ok().json(json!({ "message": MESSAGE }))
 }
 
-HttpResponse::Ok().json(json!({
-    async fn health_checker() -> impl Responder {
-        const MESSAGE: &str = "Health checker route";
-    }
-}))
-
+// Função de configuração das rotas
 pub fn config(cfg: &mut ServiceConfig) {
     cfg.service(
-        scope("/api") 
-            .service(health_checker),
+        scope("/api")
+            .service(health_checker), // Registra o serviço health_checker
     );
 }
